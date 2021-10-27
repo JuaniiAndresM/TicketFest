@@ -23,5 +23,8 @@ html{
 
 /* SCSS Components */
 
+@import 'components/general';
 @import 'components/inicio';
 @import 'components/loader';
+@import 'components/form';
+@import 'components/completed';

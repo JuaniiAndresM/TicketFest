@@ -15,16 +15,70 @@ html {
 }
 
 /* SCSS Components */
+.app-background {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(145deg, #3c4b8b, #091547);
+}
+
+.app-background .background {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(145deg, #3c4b8b83, #0915476c);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+}
+
+.app-background .circle {
+  position: absolute;
+  bottom: 150px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #fb00ff;
+}
+
+.app-background .circle2 {
+  position: absolute;
+  top: -10px;
+  right: -100px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #00b7ff;
+}
+
+.app-background .circle:nth-child(2) {
+  top: 40px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+}
+
+.app-background .circle2:nth-child(3) {
+  top: 500px;
+  left: -80px;
+  width: 200px;
+  height: 200px;
+}
+
 /* Colors */
 /* ------- */
 .content-wrapper {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(145deg, #00c3ff, #0082fc);
 }
 
 .content-wrapper .content-header {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
           box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(11px);
@@ -33,7 +87,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 100%;
   height: 350px;
-  border-radius: 0 0 30% 30%;
+  border-radius: 0 0 35% 35%;
   text-align: center;
   position: relative;
 }
@@ -54,21 +108,37 @@ html {
   font-size: 1.6em;
 }
 
+.content-wrapper .content-header .header {
+  margin-top: 30px;
+}
+
+.content-wrapper .content-header .header .title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+}
+
+.content-wrapper .content-header .header .title b {
+  color: #00c3ff;
+  font-size: 27px;
+}
+
+.content-wrapper .content-header .header h1 {
+  font-weight: bold;
+  color: white;
+}
+
+.content-wrapper .content-header .header p {
+  margin: 8px 20px;
+  line-height: 15px;
+  color: #b4bdd1;
+}
+
 .content-wrapper .content-body {
-  background: rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   width: 90%;
-  height: calc(100vh - 250px);
-  margin: 0 auto;
-  position: relative;
-  top: -150px;
+  margin: 50px auto;
   text-align: center;
-  color: #666;
+  color: #fff;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -83,21 +153,6 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.content-wrapper .content-body .header .title {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.content-wrapper .content-body .header .title b {
-  color: #0090ff;
-  font-size: 27px;
-}
-
-.content-wrapper .content-body .header p {
-  margin-top: 8px;
-  line-height: 15px;
 }
 
 .content-wrapper .content-body .form-buttons {
@@ -117,12 +172,13 @@ html {
           flex-direction: column;
 }
 
-.content-wrapper .content-body .form-buttons a {
+.content-wrapper .content-body .form-buttons .button-login {
   background: #0090ff;
+  max-width: 250px;
   width: 100%;
-  height: 50px;
+  height: 60px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,84 +188,24 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#932CFC), to(#2237E6));
+  background: linear-gradient(to right, #932CFC, #2237E6);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
+  color: white;
 }
 
-.content-wrapper .content-body .form-buttons a i {
+.content-wrapper .content-body .form-buttons .button-login i {
   margin-right: 10px;
 }
 
-.content-wrapper .content-body .form-buttons a:nth-child(2) {
-  background: transparent;
-  border: 2px solid #0090ff;
-  color: #0090ff;
-  font-weight: bold;
+.content-wrapper .content-body .form-buttons .button-register {
+  text-decoration: none;
+  color: #c1c9da;
 }
 
-.content-wrapper .content-body .form-inputs {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.content-wrapper .content-body .form-inputs .input {
-  width: 100%;
-  position: relative;
-}
-
-.content-wrapper .content-body .form-inputs .input input {
-  width: 100%;
-  height: 50px;
-  padding: 10px;
-  padding-left: 30px;
-  margin: 5px 0;
-  background: rgba(238, 238, 238, 0.685);
-  border: none;
-  border-radius: 10px;
-  outline: none;
-  color: #888;
-}
-
-.content-wrapper .content-body .form-inputs .input i {
-  position: absolute;
-  top: 22px;
-  left: 10px;
-  color: #888;
-}
-
-.content-wrapper .content-body .form-inputs button {
-  background: #0090ff;
-  width: 100%;
-  height: 50px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
+.content-wrapper .content-body .form-buttons .button-register:hover {
   color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.content-wrapper .content-body .form-inputs button i {
-  margin-right: 10px;
-}
-
-.content-wrapper .content-body .form-inputs .pass {
-  text-decoration: none;
-  color: #444;
-  font-weight: 600;
 }
 
 /* Colors */
@@ -332,5 +328,259 @@ html {
   100% {
     height: 0%;
   }
+}
+
+.content-login, .content-register, .content-password {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-login .steps, .content-register .steps, .content-password .steps {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.content-login .steps .step1, .content-register .steps .step1, .content-password .steps .step1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #932CFC;
+  z-index: 1;
+}
+
+.content-login .steps .step2, .content-login .steps .step3, .content-register .steps .step2, .content-register .steps .step3, .content-password .steps .step2, .content-password .steps .step3 {
+  right: calc(50% - 10px);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #5800b1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 1;
+}
+
+.content-login .steps .step3, .content-register .steps .step3, .content-password .steps .step3 {
+  right: 0;
+}
+
+.content-login .steps .line, .content-register .steps .line, .content-password .steps .line {
+  width: 100%;
+  height: 7px;
+  background-color: #5800b1;
+  border-radius: 20px;
+}
+
+.content-login .steps .complete, .content-register .steps .complete, .content-password .steps .complete {
+  position: absolute;
+  width: 0%;
+  height: 7px;
+  background-color: #932CFC;
+  border-radius: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.content-login .form-inputs, .content-login .step2-form, .content-login .step3-form, .content-register .form-inputs, .content-register .step2-form, .content-register .step3-form, .content-password .form-inputs, .content-password .step2-form, .content-password .step3-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-login .form-inputs .input, .content-login .step2-form .input, .content-login .step3-form .input, .content-register .form-inputs .input, .content-register .step2-form .input, .content-register .step3-form .input, .content-password .form-inputs .input, .content-password .step2-form .input, .content-password .step3-form .input {
+  width: 100%;
+  position: relative;
+}
+
+.content-login .form-inputs .input input, .content-login .step2-form .input input, .content-login .step3-form .input input, .content-register .form-inputs .input input, .content-register .step2-form .input input, .content-register .step3-form .input input, .content-password .form-inputs .input input, .content-password .step2-form .input input, .content-password .step3-form .input input {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  padding-left: 30px;
+  margin: 5px 0;
+  background: rgba(238, 238, 238, 0.411);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: #444;
+}
+
+.content-login .form-inputs .input input::-webkit-input-placeholder, .content-login .step2-form .input input::-webkit-input-placeholder, .content-login .step3-form .input input::-webkit-input-placeholder, .content-register .form-inputs .input input::-webkit-input-placeholder, .content-register .step2-form .input input::-webkit-input-placeholder, .content-register .step3-form .input input::-webkit-input-placeholder, .content-password .form-inputs .input input::-webkit-input-placeholder, .content-password .step2-form .input input::-webkit-input-placeholder, .content-password .step3-form .input input::-webkit-input-placeholder {
+  color: #444;
+}
+
+.content-login .form-inputs .input input:-ms-input-placeholder, .content-login .step2-form .input input:-ms-input-placeholder, .content-login .step3-form .input input:-ms-input-placeholder, .content-register .form-inputs .input input:-ms-input-placeholder, .content-register .step2-form .input input:-ms-input-placeholder, .content-register .step3-form .input input:-ms-input-placeholder, .content-password .form-inputs .input input:-ms-input-placeholder, .content-password .step2-form .input input:-ms-input-placeholder, .content-password .step3-form .input input:-ms-input-placeholder {
+  color: #444;
+}
+
+.content-login .form-inputs .input input::-ms-input-placeholder, .content-login .step2-form .input input::-ms-input-placeholder, .content-login .step3-form .input input::-ms-input-placeholder, .content-register .form-inputs .input input::-ms-input-placeholder, .content-register .step2-form .input input::-ms-input-placeholder, .content-register .step3-form .input input::-ms-input-placeholder, .content-password .form-inputs .input input::-ms-input-placeholder, .content-password .step2-form .input input::-ms-input-placeholder, .content-password .step3-form .input input::-ms-input-placeholder {
+  color: #444;
+}
+
+.content-login .form-inputs .input input::placeholder, .content-login .step2-form .input input::placeholder, .content-login .step3-form .input input::placeholder, .content-register .form-inputs .input input::placeholder, .content-register .step2-form .input input::placeholder, .content-register .step3-form .input input::placeholder, .content-password .form-inputs .input input::placeholder, .content-password .step2-form .input input::placeholder, .content-password .step3-form .input input::placeholder {
+  color: #444;
+}
+
+.content-login .form-inputs .input i, .content-login .step2-form .input i, .content-login .step3-form .input i, .content-register .form-inputs .input i, .content-register .step2-form .input i, .content-register .step3-form .input i, .content-password .form-inputs .input i, .content-password .step2-form .input i, .content-password .step3-form .input i {
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  color: #444;
+}
+
+.content-login .form-inputs button, .content-login .step2-form button, .content-login .step3-form button, .content-register .form-inputs button, .content-register .step2-form button, .content-register .step3-form button, .content-password .form-inputs button, .content-password .step2-form button, .content-password .step3-form button {
+  background: -webkit-gradient(linear, left top, right top, from(#932CFC), to(#2237E6));
+  background: linear-gradient(to right, #932CFC, #2237E6);
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.content-login .form-inputs button i, .content-login .step2-form button i, .content-login .step3-form button i, .content-register .form-inputs button i, .content-register .step2-form button i, .content-register .step3-form button i, .content-password .form-inputs button i, .content-password .step2-form button i, .content-password .step3-form button i {
+  margin-right: 10px;
+}
+
+.content-login .form-inputs .pass, .content-login .step2-form .pass, .content-login .step3-form .pass, .content-register .form-inputs .pass, .content-register .step2-form .pass, .content-register .step3-form .pass, .content-password .form-inputs .pass, .content-password .step2-form .pass, .content-password .step3-form .pass {
+  text-decoration: none;
+  color: #c1c9da;
+  font-weight: 300;
+}
+
+.content-login .steps-form, .content-register .steps-form, .content-password .steps-form {
+  width: 100%;
+  position: relative;
+}
+
+.content-login .steps-form .step2-form, .content-login .steps-form .step3-form, .content-register .steps-form .step2-form, .content-register .steps-form .step3-form, .content-password .steps-form .step2-form, .content-password .steps-form .step3-form {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.content-login {
+  position: relative;
+  margin: 20px auto;
+}
+
+.content-register {
+  position: relative;
+  margin: 0 auto;
+}
+
+.content-password {
+  position: relative;
+  margin: 10px auto;
+}
+
+.completed {
+  position: relative;
+  top: -160px;
+  max-width: 500px;
+  width: calc(100% - 20px);
+  height: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.15);
+  -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.completed #completed {
+  color: #00faaf;
+  font-size: 8em;
+  -webkit-box-shadow: 0 2px 20px 5px rgba(0, 250, 175, 0.5);
+          box-shadow: 0 2px 20px 5px rgba(0, 250, 175, 0.5);
+  border: none;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.completed p {
+  color: #b4bdd1;
+}
+
+.completed a {
+  background: -webkit-gradient(linear, left top, right top, from(#932CFC), to(#2237E6));
+  background: linear-gradient(to right, #932CFC, #2237E6);
+  max-width: 250px;
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.completed a i {
+  margin-right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
