@@ -1,0 +1,26 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+
+/* Colors */
+
+$primary: #0090ff;
+$secondary: #fff;
+
+/* Basics */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Quicksand';
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* SCSS Components */
+
+@import 'components/inicio';

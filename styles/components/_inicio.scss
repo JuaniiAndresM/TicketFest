@@ -1,0 +1,182 @@
+/* Colors */
+
+$primary: #0090ff;
+$secondary: #fff;
+
+/* ------- */
+
+.content-wrapper{
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(145deg, rgb(0, 195, 255), #0082fc);
+    .content-header{
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 11px );
+        -webkit-backdrop-filter: blur( 11px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+        width: 100%;
+        height: 350px;
+
+        border-radius: 0 0 30% 30%;
+        text-align: center;
+        position: relative;
+
+        .content-header__logo{
+            max-width: 300px;
+            width: calc(100% - 20px);
+ 
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+        a{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: $secondary;
+            font-size: 1.6em;
+        }
+    }
+    .content-body{
+        background: rgba( 255, 255, 255, 0.5 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 11px );
+        -webkit-backdrop-filter: blur( 11px );
+        border-radius: 30px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+        width: 90%;
+        height: calc(100vh - 250px);
+
+        margin: 0 auto;
+
+        position: relative;
+        top: -150px;
+
+        text-align: center;
+        color: #666;
+
+        padding: 20px;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+
+        .header{
+            .title{
+                font-size: 1.3em;
+                font-weight: bold;
+
+                b{
+                    color: $primary;
+                    font-size: 27px;
+                }
+            }
+            p{
+                margin-top: 8px;
+                line-height: 15px;
+            }    
+        }
+        
+        .form-buttons{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            a{
+                background: $primary;
+                width: 100%;
+                height: 50px;
+
+                margin: 10px;
+                border-radius: 10px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+            a:nth-child(2){
+                background: transparent;
+                border: 2px solid $primary;
+
+                color: $primary;
+                font-weight: bold;
+            }
+        }
+
+        .form-inputs{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .input{
+                width: 100%;
+                position: relative;
+
+                input{
+                    width: 100%;
+                    height: 50px;
+
+                    padding: 10px;
+                    padding-left: 30px;
+
+                    margin: 5px 0;
+
+                    background: rgba(238, 238, 238, 0.685);
+                    border: none;
+                    border-radius: 10px;
+
+                    outline: none;
+                    color: #888;
+                }
+                i{
+                    position: absolute;
+                    top: 22px;
+                    left: 10px;
+                    color: #888;
+                }
+            }
+            button{
+                background: $primary;
+                width: 100%;
+                height: 50px;
+
+                margin: 10px;
+                border-radius: 10px;
+
+                border: none;
+
+                color: white;
+                text-decoration: none;
+                font-size: 20px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+            .pass{
+                text-decoration: none;
+                color: #444;
+                font-weight: 600;
+            }
+        }
+        
+    }
+}
