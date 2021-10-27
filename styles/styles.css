@@ -656,11 +656,15 @@ html {
   margin: 0;
 }
 
-.content-body .menu-buttons {
+.menu {
+  margin: 20px auto !important;
+}
+
+.menu .menu-buttons {
   width: 100%;
 }
 
-.content-body .menu-buttons a {
+.menu .menu-buttons a {
   background: #0090ff;
   max-width: 250px;
   width: 100%;
@@ -683,7 +687,7 @@ html {
   color: white;
 }
 
-.content-body .menu-buttons a i {
+.menu .menu-buttons a i {
   margin-right: 10px;
 }
 
