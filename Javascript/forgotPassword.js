@@ -45,5 +45,5 @@ function step3_continue(){
     }
 }
 function completed_transition(){
-    location.href = "/Form/Completed.html";
+    location.href = "/TicketFest/Form/Completed.html";
 }
