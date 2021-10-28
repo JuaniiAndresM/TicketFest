@@ -88,18 +88,26 @@ if(isset($_GET['ID_Ticket'])){
 
                 <?php
 
-                for($x = 0; $x < $cantidad_participantes; $x++){
-                    echo '  <button class="ticket">
-                                <div class="ticket-img">
-                                    <i class="fas fa-user-friends"></i>
-                                </div>
-                                <div class="ticket-body">
-                                    <h2>'.$participante_p[$x]['Nombre'].'</h2>
-                                    <p><i class="fas fa-user"></i> '.$participante_p[$x]['Integrantes'].'</p>
-                                    <p><i class="fas fa-money-bill-wave"></i> $'.$participante_p[$x]['Valor'].'</p>
-                                </div>
-                            </button>';
+                if($cantidad_participantes == 0){
+                    echo '  <div class="no-tickets">
+                                <p><i class="fas fa-user-friends"></i> No hay participantes agregados.</p>
+                            </div>';
+                }else{
+                    for($x = 0; $x < $cantidad_participantes; $x++){
+                        echo '  <button class="ticket">
+                                    <div class="ticket-img">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <div class="ticket-body">
+                                        <h2>'.$participante_p[$x]['Nombre'].'</h2>
+                                        <p><i class="fas fa-user"></i> '.$participante_p[$x]['Integrantes'].'</p>
+                                        <p><i class="fas fa-money-bill-wave"></i> $'.$participante_p[$x]['Valor'].'</p>
+                                    </div>
+                                </button>';
+                    }
                 }
+
+                
 
                 ?>
 

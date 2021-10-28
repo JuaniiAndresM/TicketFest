@@ -48,20 +48,35 @@ if(!isset($_SESSION['Usuario'])){
             <div class="header">
                 <div class="profile">
                     <div class="profile-img">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-ticket-alt"></i>
                     </div>
                     <div class="profile-name">
-
-                        <?php
-                        echo '  <h2>'.$_SESSION['Nombre'].'</h2>';
-                        ?>
-
+                        <h2>Nuevo Ticket</h2>
                         <p id="numTickets"></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content-tickets">
+            <div class="steps">
+                <div class="step1"></div>
+                <div class="step2"></div>
+                <div class="step3"></div>
+                <div class="line"></div>
+                <div class="complete"></div>                
+            </div>
+
+            <div class="create-ticket">
+                <div class="input">
+                    <i class="fas fa-ticket-alt"></i>
+                    <input type="text" name="titulo_ticket" placeholder="Titulo del Ticket" id="titulo" required>
+                </div>
+                <div class="input">
+                    <i class="far fa-calendar-alt"></i>
+                    <input type="date" name="titulo_ticket" placeholder="Titulo del Ticket" id="titulo" required>
+                </div>
+                <button onclick="step1_continue()"><i class="fas fa-arrow-right"></i> Siguiente</button>
+            </div>
         </div>
 
         <div id="bottom-menu"></div>
