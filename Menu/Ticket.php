@@ -16,7 +16,10 @@ if(isset($_GET['ID_Ticket'])){
     $Date = $ticket_p[0]['Date'];
     $Date2 = explode('-',$Date,3);
 
-    $ticket_p = $ticket->TraerParticipantes($id);
+    $participante_p = $ticket->TraerParticipantes($id);
+    $cantidad_participantes = count($participante_p);
+}else{
+    header('Location: /TicketFest/Menu/Principal.php');
 }
 
 ?>
@@ -34,7 +37,6 @@ if(isset($_GET['ID_Ticket'])){
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
     <script src="/TicketFest/Javascript/Tickets/TicketList.js"></script>
-    <script src="/TicketFest/Javascript/Tickets/Ticket.js"></script>
     <script src="/TicketFest/Javascript/web.js"></script>
 
     <link rel="stylesheet" href="/TicketFest/styles/styles.css">
@@ -83,46 +85,24 @@ if(isset($_GET['ID_Ticket'])){
             <div class="search"></div>
 
             <div class="ticket-wrapper">
-                <button class="ticket">
-                    <div class="ticket-img">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <div class="ticket-body">
-                        <h2>Nombre del Integrante</h2>
-                        <p><i class="fas fa-user"></i> 4</p>
-                        <p><i class="fas fa-money-bill-wave"></i> $1.800</p>
-                    </div>
-                </button>
-                <button class="ticket">
-                    <div class="ticket-img">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <div class="ticket-body">
-                        <h2>Nombre del Integrante</h2>
-                        <p><i class="fas fa-user"></i> 5</p>
-                        <p><i class="fas fa-money-bill-wave"></i> $950</p>
-                    </div>
-                </button>
-                <button class="ticket">
-                    <div class="ticket-img">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <div class="ticket-body">
-                        <h2>Nombre del Integrante</h2>
-                        <p><i class="fas fa-user"></i> 3</p>
-                        <p><i class="fas fa-money-bill-wave"></i> $1.152</p>
-                    </div>
-                </button>
-                <button class="ticket">
-                    <div class="ticket-img">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <div class="ticket-body">
-                        <h2>Nombre del Integrante</h2>
-                        <p><i class="fas fa-user"></i> 6</p>
-                        <p><i class="fas fa-money-bill-wave"></i> $945</p>
-                    </div>
-                </button>
+
+                <?php
+
+                for($x = 0; $x < $cantidad_participantes; $x++){
+                    echo '  <button class="ticket">
+                                <div class="ticket-img">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="ticket-body">
+                                    <h2>'.$participante_p[$x]['Nombre'].'</h2>
+                                    <p><i class="fas fa-user"></i> '.$participante_p[$x]['Integrantes'].'</p>
+                                    <p><i class="fas fa-money-bill-wave"></i> $'.$participante_p[$x]['Valor'].'</p>
+                                </div>
+                            </button>';
+                }
+
+                ?>
+
             </div>
         </div>
 
