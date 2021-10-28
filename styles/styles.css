@@ -869,7 +869,7 @@ html {
   margin-right: 10px;
 }
 
-.bottom-menu {
+#bottom-menu {
   width: 100%;
   height: 50px;
   position: absolute;
@@ -889,7 +889,7 @@ html {
           align-items: center;
 }
 
-.bottom-menu a {
+#bottom-menu .menu-button {
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -907,15 +907,25 @@ html {
           flex-direction: column;
   border-radius: 10px;
   color: white;
+  border: none;
+  background-color: transparent;
   text-decoration: none;
   font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#bottom-menu .menu-button {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media screen and (max-width: 800px) {
   .content-wrapper .header .profile {
     width: calc(100% - 20px);
   }
-  .bottom-menu {
+  #bottom-menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1049,6 +1059,55 @@ html {
           flex-direction: column;
 }
 
+.content-tickets .ticket-wrapper .no-tickets {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-tickets .ticket-wrapper .no-tickets p {
+  color: white;
+}
+
+.content-tickets .ticket-wrapper .no-tickets .button {
+  background: #0090ff;
+  max-width: 150px;
+  width: 100%;
+  height: 45px;
+  margin: 10px auto;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, right top, from(#932cfc), to(#2237e6));
+  background: linear-gradient(to right, #932cfc, #2237e6);
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+.content-tickets .ticket-wrapper .no-tickets .button i {
+  margin-right: 10px;
+}
+
 .content-tickets .ticket-wrapper .ticket {
   background: rgba(255, 255, 255, 0.15);
   -webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -1063,9 +1122,9 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

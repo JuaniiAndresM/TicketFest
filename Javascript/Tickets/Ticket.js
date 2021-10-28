@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
     resize();
+
+    cargoTickets();
     
     $(".ticket").click(function(){
         console.log("Hola");
@@ -20,5 +22,13 @@ function resize(){
     $(".ticket-wrapper").css('height', height2);
 }
 
-window.onresize = resize;
+function cargoTickets(){
+    $.ajax({
+        url: "../PHP/cargoTickets.php",
+        success: function (response) {
+            $("#load-tickets").html(response);
+        }
+    });
+}
 
+window.onresize = resize;

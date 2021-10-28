@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['Usuario'])){
+    header('Location: /TicketFest/Menu/Principal.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,6 +18,8 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
+    <script src="/TicketFest/Javascript/Form/Usuario.js"></script>
+    <script src="/TicketFest/Javascript/Form/Login.js"></script>
 
     <link rel="stylesheet" href="/TicketFest/styles/styles.css">
     
@@ -46,13 +56,13 @@
             <div class="form-inputs">
                 <div class="input">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="usuario" placeholder="Usuario">
+                    <input type="text" name="usuario" placeholder="Usuario" id="usuario">
                 </div>
                 <div class="input">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Contraseña">
+                    <input type="password" name="password" placeholder="Contraseña" id="password">
                 </div>
-                <button><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
                 <a href="/TicketFest/Form/ForgotPassword.html" class="pass">¿Olvidaste tu contraseña?</a>
                 
             </div>

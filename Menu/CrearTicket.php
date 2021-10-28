@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['Usuario'])){
+    header('Location: /TicketFest/Form/Login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,10 +18,15 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
+    <script src="/TicketFest/Javascript/Form/Usuario.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/Ticket.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/Tickets.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/functionTickets.js"></script>
+    <script src="/TicketFest/Javascript/web.js"></script>
 
     <link rel="stylesheet" href="/TicketFest/styles/styles.css">
     
-    <title>TicketFest | Mi Perfil</title>
+    <title>TicketFest | Crear Ticket</title>
 </head>
 <body>
 
@@ -38,24 +51,23 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="profile-name">
-                        <h2>Juan Morena</h2>
-                        <p><i class="fas fa-ticket-alt"></i> 4 Tickets Creados</p>
+
+                        <?php
+                        echo '  <h2>'.$_SESSION['Nombre'].'</h2>';
+                        ?>
+
+                        <p id="numTickets"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content-body menu">
+        <div class="content-tickets">
+            <div class="search"></div>
 
-            <div class="menu-buttons">
-            </div>
+            <div class="ticket-wrapper" id="load-tickets"></div>
         </div>
-        <div class="bottom-menu">
-            <a href="/TicketFest/Menu/Principal.html"><i class="fas fa-home"></i></a>
-            <a href="/TicketFest/Menu/Principal.html"><i class="fas fa-plus"></i></a>
-            <a href="/TicketFest/Menu/TicketList.html"><i class="fas fa-history"></i></a>
-            <a href="/TicketFest/Menu/Usuario.html"><i class="fas fa-user"></i></a>
-            <a href="/TicketFest/index.html"><i class="fas fa-sign-out-alt"></i></a>
-        </div>
+
+        <div id="bottom-menu"></div>
     </div>
     
 </body>
