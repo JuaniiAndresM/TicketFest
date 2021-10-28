@@ -2,13 +2,7 @@
 $(document).ready(function () {
     resize();
 
-    cargoTickets();
-    
-    $(".ticket").click(function(){
-        console.log("Hola");
-        location.href = "/TicketFest/Menu/Ticket.html";
-    });
-    
+    cargoTickets();    
 });
 
 function resize(){
@@ -32,3 +26,7 @@ function cargoTickets(){
 }
 
 window.onresize = resize;
+
+function ticket(id){
+    location.href = "/TicketFest/Menu/Ticket.php?ID_Ticket=" + id;
+}

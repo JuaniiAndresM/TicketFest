@@ -1,3 +1,26 @@
+<?php
+include '../PHP/procedimientosTicket.php';
+session_start();
+
+$ticket = new Ticket();
+
+if(!isset($_SESSION['Usuario'])){
+    header('Location: /TicketFest/Form/Login.php');
+}
+
+if(isset($_GET['ID_Ticket'])){
+
+    $id = $_GET['ID_Ticket'];
+    $ticket_p = $ticket->TraerTicket($id);
+
+    $Date = $ticket_p[0]['Date'];
+    $Date2 = explode('-',$Date,3);
+
+    $ticket_p = $ticket->TraerParticipantes($id);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,12 +33,16 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
-    <script src="/TicketFest/Javascript/Ticket.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/TicketList.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/Ticket.js"></script>
     <script src="/TicketFest/Javascript/web.js"></script>
 
     <link rel="stylesheet" href="/TicketFest/styles/styles.css">
     
-    <title>TicketFest | Ticket</title>
+    <?php
+        echo '<title>TicketFest | '.$ticket_p[0]['Titulo'].'</title>'
+    ?>
+    
 </head>
 <body>
 
@@ -40,9 +67,14 @@
                         <i class="fas fa-ticket-alt"></i>
                     </div>
                     <div class="profile-name">
-                        <h2>Titulo del Ticket</h2>
-                        <h4><i class="fas fa-money-bill-wave"></i> $415</h4>
-                        <p><i class="far fa-calendar-alt"></i> 27/10/2021</p>
+                        <?php
+
+                        echo '  <h2>'.$ticket_p[0]['Titulo'].'</h2>
+                                <h4><i class="fas fa-money-bill-wave"></i> $'.$ticket_p[0]['Valor'].'</h4>
+                                <p><i class="far fa-calendar-alt"></i> '.$Date2[2].'/'.$Date2[1].'/'.$Date2[0].'</p>';
+                        
+
+                        ?>
                     </div>
                 </div>
             </div>

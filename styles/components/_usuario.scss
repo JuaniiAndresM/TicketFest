@@ -1,3 +1,10 @@
+/* Colors */
+
+$primary: #0090ff;
+$secondary: #fff;
+
+/* ------- */
+
 .usuario-wrapper {
   height: 250px !important;
   position: relative;
@@ -16,11 +23,7 @@
         height: 120px;
         border-radius: 50%;
 
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(11px);
-        -webkit-backdrop-filter: blur(11px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: white;
 
         display: flex;
         justify-content: center;
@@ -30,7 +33,7 @@
         margin: 10px auto;
 
         i {
-          background: -webkit-linear-gradient(#922cfb, #2836e7);
+          background: $primary;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
 
@@ -53,7 +56,7 @@
           text-overflow: ellipsis;
         }
         h4 {
-          color: #b4bdd1;
+          color: #ddd;
           margin: 5px auto;
 
           font-size: 20px;
@@ -63,7 +66,7 @@
           font-weight: 300;
         }
         p {
-          color: #b4bdd1;
+          color: #ddd;
           margin: 0 auto;
 
           max-width: 160px;

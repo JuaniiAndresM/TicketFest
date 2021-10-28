@@ -19,7 +19,7 @@ for($x = 0; $x < $numero_tickets; $x++){
     $Date = $tickets[$x]['Date'];
     $Date2 = explode('-',$Date,3);
 
-    echo '  <button class="ticket">
+    echo '  <button class="ticket" onclick="ticket(' . $tickets[$x]["ID"] . ')">
                 <div class="ticket-img">
                     <i class="fas fa-ticket-alt"></i>
                 </div>

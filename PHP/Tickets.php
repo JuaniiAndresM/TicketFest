@@ -11,6 +11,12 @@ switch ($_POST["Opcion"]) {
         
         echo $numero_tickets;
     break;
+
+    case 2:
+        $tickets = $ticket->TraerTicket($_POST['ID_Ticket']);
+        
+        echo $tickets;
+    break;
 }
 
 ?>

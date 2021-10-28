@@ -19,7 +19,7 @@ if(!isset($_SESSION['Usuario'])){
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
     <script src="/TicketFest/Javascript/Form/Usuario.js"></script>
-    <script src="/TicketFest/Javascript/Tickets/Ticket.js"></script>
+    <script src="/TicketFest/Javascript/Tickets/TicketList.js"></script>
     <script src="/TicketFest/Javascript/Tickets/Tickets.js"></script>
     <script src="/TicketFest/Javascript/Tickets/functionTickets.js"></script>
     <script src="/TicketFest/Javascript/web.js"></script>
@@ -62,9 +62,6 @@ if(!isset($_SESSION['Usuario'])){
             </div>
         </div>
         <div class="content-tickets">
-            <div class="search"></div>
-
-            <div class="ticket-wrapper" id="load-tickets"></div>
         </div>
 
         <div id="bottom-menu"></div>

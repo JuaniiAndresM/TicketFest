@@ -20,6 +20,9 @@ $secondary: #fff;
 html{
     scroll-behavior: smooth;
 }
+body{
+    background-color: $secondary; 
+}
 
 /* SCSS Components */
 

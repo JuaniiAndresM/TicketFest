@@ -1,3 +1,10 @@
+/* Colors */
+
+$primary: #0090ff;
+$secondary: #fff;
+
+/* ------- */
+
 .menu-principal{
   .header {
     display: block !important;
@@ -18,18 +25,14 @@
   
         margin-right: 10px;
   
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(11px);
-        -webkit-backdrop-filter: blur(11px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: $secondary;
   
         display: flex;
         justify-content: center;
         align-items: center;
   
         i {
-          background: -webkit-linear-gradient(#922cfb, #2836e7);
+          background: $primary;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -52,7 +55,7 @@
           text-overflow: ellipsis;
         }
         p {
-          color: #b4bdd1;
+          color: #ccc;
           margin: 0;
 
           max-width: 160px;
@@ -81,7 +84,7 @@
       justify-content: center;
       align-items: center;
 
-      background: linear-gradient(to right, #932cfc, #2237e6);
+      background: $primary;
       text-decoration: none;
       font-size: 18px;
 
@@ -101,11 +104,7 @@
   position: absolute;
   bottom: 0;
 
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: $primary;
 
   display: none;
   justify-content: space-evenly;
