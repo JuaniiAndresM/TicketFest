@@ -113,7 +113,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CrearParticipante`(IN ticket INT, IN name_p VARCHAR(100), in integrant INT, IN valor INT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `CrearParticipante`(IN ticket INT, IN name_p VARCHAR(100), in integrant INT, IN valor INT)
 BEGIN
 	INSERT INTO tickets (ticket_id,nombre,integrantes,value_p)value(ticket,name_p,integrant,valor);
 END ;;
@@ -132,7 +132,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CrearTicket`(IN titulo VARCHAR(100), IN fecha DATE, in valor INT, IN usuar INT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `CrearTicket`(IN titulo VARCHAR(100), IN fecha DATE, in valor INT, IN usuar INT)
 BEGIN
 	INSERT INTO tickets (title,date_ticket,value_ticket,usuario)value(titulo,fecha,valor,usuar);
 END ;;
@@ -151,7 +151,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `CrearUsuario`(IN nomb VARCHAR(100), IN usu VARCHAR(100), IN pass LONGTEXT, IN mail VARCHAR(200))
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `CrearUsuario`(IN nomb VARCHAR(100), IN usu VARCHAR(100), IN pass LONGTEXT, IN mail VARCHAR(200))
 BEGIN
 INSERT INTO tickets (nombre,user_u,password,email)value(nomb,usu,pass,mail);
 END ;;
@@ -170,7 +170,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Login`(IN username varchar(100),IN pass LONGTEXT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `Login`(IN username varchar(100),IN pass LONGTEXT)
 BEGIN
 	SELECT * FROM usuarios where user_u = username and password = pass;
 END ;;
@@ -189,7 +189,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `TraigoParticipantes`(IN id_ticket INT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `TraigoParticipantes`(IN id_ticket INT)
 BEGIN
 	SELECT * FROM participantes WHERE ticket_id = id_ticket;
 END ;;
@@ -208,7 +208,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `TraigoTicket`(IN id INT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `TraigoTicket`(IN id INT)
 BEGIN
 	SELECT * FROM tickets WHERE ticket_id = id;
 END ;;
@@ -227,7 +227,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `TraigoTicketsUsuario`(IN id_usu INT)
+CREATE DEFINER=`nqjctkft`@`localhost` PROCEDURE `TraigoTicketsUsuario`(IN id_usu INT)
 BEGIN
 	SELECT * FROM tickets WHERE usuario = id_usu;
 END ;;
