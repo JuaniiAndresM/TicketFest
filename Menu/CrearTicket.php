@@ -51,7 +51,7 @@ if(!isset($_SESSION['Usuario'])){
                         <i class="fas fa-ticket-alt"></i>
                     </div>
                     <div class="profile-name">
-                        <h2>Nuevo Ticket</h2>
+                        <h2 id="nombre_ticket">Nuevo Ticket</h2>
                         <p id="numTickets"></p>
                     </div>
                 </div>
@@ -67,15 +67,128 @@ if(!isset($_SESSION['Usuario'])){
             </div>
 
             <div class="create-ticket">
-                <div class="input">
-                    <i class="fas fa-ticket-alt"></i>
-                    <input type="text" name="titulo_ticket" placeholder="Titulo del Ticket" id="titulo" required>
+                <div class="step1-create">
+                    <div class="input">
+                        <i class="fas fa-ticket-alt"></i>
+                        <input type="text" name="titulo_ticket" placeholder="Titulo del Ticket" id="titulo" required>
+                    </div>
+                    <div class="input">
+                        <i class="far fa-calendar-alt"></i>
+                        <input type="date" name="fecha_ticket" placeholder="Fecha del Ticket" id="fecha" required>
+                    </div>
+                    <button onclick="step1_continue()"><i class="fas fa-arrow-right"></i> Siguiente</button>
                 </div>
-                <div class="input">
-                    <i class="far fa-calendar-alt"></i>
-                    <input type="date" name="titulo_ticket" placeholder="Titulo del Ticket" id="titulo" required>
+                <div class="step2-create">
+                    <div class="input">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" name="nombre_participante" placeholder="Nombre" id="nombre_participante" required>
+                    </div>
+                    <div class="input-half">
+                        <div class="input">
+                            <i class="fas fa-user-friends"></i>
+                            <input type="number" name="cantidad_participantes" placeholder="Cantidad" id="cantidad_participantes" required>
+                        </div>
+                        <div class="input">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <input type="number" name="valor_participante" placeholder="Valor" id="valor_participante" required>
+                        </div>
+                    </div>
+
+                    <button onclick="step2_add()"><i class="fas fa-user-plus"></i> Añadir</button>
+                    <div class="input-half">
+                        <button onclick="step2_list()"><i class="fas fa-users"></i> Lista</button>
+                        <button onclick="step2_continue()"><i class="fas fa-arrow-right"></i> Siguiente</button>
+                    </div>
                 </div>
-                <button onclick="step1_continue()"><i class="fas fa-arrow-right"></i> Siguiente</button>
+
+                <div class="step3-create">
+                    <div class="ticket-info">
+                        <h2>Nuevo Ticket</h2>
+                        <p class="desc">Verifique la siguiente información.</p>
+
+                        <div class="info">
+                            <p><b><i class="fas fa-tag"></i> Titulo: </b> Titulo del Ticket</p>
+                            <p><b><i class="far fa-calendar-alt"></i> Fecha: </b> 31/12/2021</p>
+                            <p><b><i class="fas fa-user-friends"></i> Participantes: </b></p>
+                        </div>
+                        <div class="participantes-list">
+                            <div class="participante">
+                                <div class="participante-img">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="participante-body">
+                                    <h2>Nombre del Integrante</h2>
+                                    <div class="info">
+                                        <p><i class="fas fa-user"></i> 3</p>
+                                        <p><i class="fas fa-money-bill-wave"></i> $450</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="participante">
+                                <div class="participante-img">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <div class="participante-body">
+                                    <h2>Nombre del Integrante</h2>
+                                    <div class="info">
+                                        <p><i class="fas fa-user"></i> 3</p>
+                                        <p><i class="fas fa-money-bill-wave"></i> $450</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button onclick="create_ticket()"><i class="fas fa-plus"></i> Crear Ticket</button>
+                </div>
+
+                <div class="integrantes-list">
+                    <div class="no-participantes">
+                        <p><i class="fas fa-user-friends"></i> No hay personas agregadas.</p>
+                    </div>
+                    <div class="cantidad-participantes">
+                        <p><i class="fas fa-user-friends"></i> 2 Participantes</p>
+                    </div>
+                    <div class="participantes">
+
+                        <div class="participante">
+                            <div class="participante-img">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="participante-body">
+                                <h2>Nombre del Integrante</h2>
+                                <div class="info">
+                                    <p><i class="fas fa-user"></i> 3</p>
+                                    <p><i class="fas fa-money-bill-wave"></i> $450</p>
+                                </div>
+                            </div>
+                            <div class="delete">
+                                <button><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="participante">
+                            <div class="participante-img">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="participante-body">
+                                <h2>Nombre del Integrante</h2>
+                                <div class="info">
+                                    <p><i class="fas fa-user"></i> 3</p>
+                                    <p><i class="fas fa-money-bill-wave"></i> $450</p>
+                                </div>
+                            </div>
+                            <div class="delete">
+                                    <button><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button onclick="step2_list_hide()"><i class="fas fa-arrow-left"></i> Atras</button>
+                </div>
+                
             </div>
         </div>
 

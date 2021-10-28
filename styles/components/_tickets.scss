@@ -30,7 +30,7 @@ $secondary: #fff;
   .steps{
     width: calc(100% - 40px);
     height: 30px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 
     display: flex;
     align-items: center;
@@ -189,6 +189,17 @@ $secondary: #fff;
   .create-ticket{
     width: calc(100% - 40px);
     margin: 0 auto;
+    overflow: hidden;
+    overflow-y: auto;
+
+    text-align: left;
+
+    .input-half{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
 
     .input{
       width: 100%;
@@ -199,7 +210,7 @@ $secondary: #fff;
           height: 50px;
 
           padding: 10px;
-          padding-left: 30px;
+          padding-left: 40px;
 
           margin: 5px 0;
 
@@ -225,7 +236,7 @@ $secondary: #fff;
       width: 100%;
       height: 50px;
 
-      margin: 10px 0;
+      margin: 5px 0;
       border-radius: 10px;
 
       border: none;
@@ -236,6 +247,173 @@ $secondary: #fff;
 
       i{
           margin-right: 10px;
+      }
+    }
+
+    .step3-create{
+      .ticket-info{
+        width: calc(100% - 40px);
+        margin: 0 auto;
+
+        text-align: center;
+
+        h2{
+          color: $primary;
+          font-weight: bold;
+        }
+        .desc{
+          color: #888;
+        }
+
+        .info{
+          margin-top: 10px;
+          text-align: left;
+        }
+        .participantes-list{
+          width: 100%;
+          margin-top: 10px;
+          .participante{
+            width: 100%;
+            margin: 5px auto;
+  
+            height: 80px;
+  
+            border-radius: 20px;
+            background: $primary;
+  
+            display: grid;
+            grid-template-columns: 80px 1fr;
+  
+            overflow: hidden;
+  
+            .participante-img{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+  
+              i{
+                font-size: 2.5em;
+                color: white;
+              }
+            }
+            .participante-body{
+              width: 100%;
+  
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+  
+              text-align: left;
+  
+              h2{
+                font-size: 1em;
+                color: white;
+              }
+  
+              .info{
+                width: 100%;
+                text-align: left;
+  
+                color: #ccc;
+              }
+            }
+          }
+        }
+      }
+    }
+    .integrantes-list{
+      width: 100%;
+      height: 150px;
+
+      display: none;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .no-participantes{
+        display: none;
+
+        p{
+          color: $primary;
+        }
+      }
+      .cantidad-participantes{
+        margin-left: 20px;
+        p{
+          color: $primary;
+        }
+      }
+      .participantes{
+        width: 100%;
+
+        overflow: hidden;
+        overflow-y: auto;
+
+        .participante{
+          width: calc(100% - 20px);
+          margin: 5px auto;
+
+          height: 80px;
+
+          border-radius: 20px;
+          background: $primary;
+
+          display: grid;
+          grid-template-columns: 80px 1fr 30px;
+
+          overflow: hidden;
+
+          .participante-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            i{
+              font-size: 2.5em;
+              color: white;
+            }
+          }
+          .participante-body{
+            width: 100%;
+            margin-left: 10px;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
+            text-align: left;
+
+            h2{
+              font-size: 1em;
+              color: white;
+            }
+
+            .info{
+              width: 100%;
+              text-align: left;
+
+              color: #ccc;
+            }
+          }
+          .delete{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+              width: 30px;
+              height: 30px;
+              background: transparent;
+
+              color: white;
+              font-size: 1.2em;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
       }
     }
   }
