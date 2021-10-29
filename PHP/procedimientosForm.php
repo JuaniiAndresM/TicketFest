@@ -46,7 +46,7 @@ class Form{
         include "../Database/server.php";
 
         $sql = "CALL Register(?,?,?,?)";
-        $stmts = $conn->prepare($sql);
+        $stmts = $mysqli->prepare($sql);
 
         $stmts->bind_param("ssss", $usuario, $nombre, $pass, $mail);
         if ($stmts->execute()) {
