@@ -1,6 +1,6 @@
 <?php
 
-class Login{
+class Form{
     public function Login($usuario, $pass){
         include "../Database/server.php";
 
@@ -40,6 +40,21 @@ class Login{
             $info = $stmts->error;
         }
         return $info;
+    }
+
+    public function Register($usuario, $nombre, $pass, $mail){
+        include "../Database/server.php";
+
+        $sql = "CALL Register(?,?,?,?)";
+        $stmts = $conn->prepare($sql);
+
+        $stmts->bind_param("ssss", $usuario, $nombre, $pass $mail);
+        if ($stmts->execute()) {
+            $valor = 1;
+        } else {
+            $valor = $stmts->error;
+        }
+        return $valor;
     }
 
     public function cerrarSesion(){
