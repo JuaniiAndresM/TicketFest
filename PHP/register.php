@@ -17,7 +17,6 @@ class ValidacionRegister
         $this->MAIL = $MAIL;
         $this->PASSWORD = $PASSWORD;
         $this->PASSWORD_CONFIRMATION = $PASSWORD_CONFIRMATION;
-
     }
     public function INICIO_VALIDACION()
     {
@@ -50,7 +49,7 @@ class ValidacionRegister
     }
     public function VALIDAR_NAME()
     {
-        $PATTERN_NAME = "/^([^0-9]*)$/i";
+        $PATTERN_NAME = "/^[a-zA-Z][a-zA-Z\s]+$/i";
 
         if (isset($this->NAME) && preg_match($PATTERN_NAME, $this->NAME)) {
             $this->VALIDO = 1;
@@ -89,8 +88,13 @@ class ValidacionRegister
 }
 
 if ($USERNAME != null && $NAME != null && $MAIL != null && $PASSWORD != null && $PASSWORD_CONFIRMATION != null) {
+
     $VALIDACION = new ValidacionRegister($USERNAME, $NAME, $MAIL, $PASSWORD, $PASSWORD_CONFIRMATION);
     echo $VALIDACION->INICIO_VALIDACION();
+
 } else {
+
     echo "No pueden haber campos vacios.";
+    
 }
+
