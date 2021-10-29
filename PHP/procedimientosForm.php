@@ -48,7 +48,7 @@ class Form{
         $sql = "CALL Register(?,?,?,?)";
         $stmts = $conn->prepare($sql);
 
-        $stmts->bind_param("ssss", $usuario, $nombre, $pass $mail);
+        $stmts->bind_param("ssss", $usuario, $nombre, $pass, $mail);
         if ($stmts->execute()) {
             $valor = 1;
         } else {
