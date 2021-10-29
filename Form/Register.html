@@ -10,6 +10,8 @@
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://kit.fontawesome.com/1e193e3a23.js' crossorigin='anonymous'></script>
     <script src="/TicketFest/Javascript/loader.js"></script>
+    <script src="/TicketFest/Javascript/Form/Usuario.js"></script>
+    <script src="/TicketFest/Javascript/web.js"></script>
 
     <link rel="stylesheet" href="/TicketFest/styles/styles.css">
     
@@ -43,21 +45,25 @@
             <div class="form-inputs">
                 <div class="input">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="usuario" placeholder="Usuario">
+                    <input id='usuario' type="text" name="usuario" placeholder="Usuario">
+                </div>
+                <div class="input">
+                    <i class="fas fa-tag"></i>
+                    <input id='nombre' type="text" name="nombre" placeholder="Nombre">
                 </div>
                 <div class="input">
                     <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email">
+                    <input id='mail' type="email" name="email" placeholder="Email">
                 </div>
                 <div class="input">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Contraseña">
+                    <input id="password" type="password" name="password" placeholder="Contraseña">
                 </div>
                 <div class="input">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Ingrese de nuevo su Contraseña">
+                    <input id="passwordconf" type="password" name="password" placeholder="Ingrese de nuevo su Contraseña">
                 </div>
-                <button><i class="fas fa-user-plus"></i> Register</button>
+                <button id="register"><i class="fas fa-user-plus"></i> Register</button>
                 <a href="/TicketFest/Form/Login.html" class="pass">¿Ya tienes una cuenta?</a>
                 
             </div>

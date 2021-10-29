@@ -18,6 +18,16 @@ class Usuario{
         });
         return x;
     }
+    register(usuario,nombre,mail,password,passwordconf){
+        $.ajax({
+            type: "POST",
+            url: "../PHP/register.php",
+            data: {USERNAME: usuario,NAME: nombre,MAIL: mail,PASSWORD: password, PASSWORDCONF: passwordconf},
+            success: function (response) {
+                console.log(response)
+            }
+        });
+    }
     cerrarsesion(){
         $.ajax({
             async: false,
