@@ -91,10 +91,10 @@ class ValidacionRegister
 if ($USERNAME != null && $NAME != null && $MAIL != null && $PASSWORD != null && $PASSWORD_CONFIRMATION != null) {
 
     $VALIDACION = new ValidacionRegister($USERNAME, $NAME, $MAIL, $PASSWORD, $PASSWORD_CONFIRMATION);
-
     if ($VALIDACION->INICIO_VALIDACION()) {
         $GUARDAR_DATOS = new Form();
-        $GUARDAR_DATOS->Register($USERNAME, $NAME, $PASSWORD, $MAIL);
+        $GUARDAR_DATOS->Register($USERNAME, $NAME, sha256($PASSWORD), $MAIL);
     }
 
 } else { echo "No pueden haber campos vacios."; }
+?>
