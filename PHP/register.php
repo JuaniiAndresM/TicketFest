@@ -1,4 +1,5 @@
 <?php
+include './procedimientosForm.php';
 
 $USERNAME = $_POST["USERNAME"];
 $NAME = $_POST['NAME'];
@@ -31,10 +32,10 @@ class ValidacionRegister
         } elseif ($this->VALIDAR_PASSWORD() == "nc") {
             echo "Las Contraseñas no coinciden.";
         } else {
-            return "Datos validos";
+            return 1;
         }
     }
-    public function VALIDAR_USERNAME()
+    private function VALIDAR_USERNAME()
     {
 
         $PATTERN_USERNAME = "/\W/i";
@@ -47,7 +48,7 @@ class ValidacionRegister
 
         return $this->VALIDO;
     }
-    public function VALIDAR_NAME()
+    private function VALIDAR_NAME()
     {
         $PATTERN_NAME = "/^[a-zA-Z][a-zA-Z\s]+$/i";
 
@@ -59,7 +60,7 @@ class ValidacionRegister
 
         return $this->VALIDO;
     }
-    public function VALIDAR_MAIL()
+    private function VALIDAR_MAIL()
     {
         $PATTERN_MAIL = "/^\w*(@gmail.com)|(@hotmail.com)|(@yahoo.com){1}$/i";
 
@@ -71,7 +72,7 @@ class ValidacionRegister
 
         return $this->VALIDO;
     }
-    public function VALIDAR_PASSWORD()
+    private function VALIDAR_PASSWORD()
     {
         $PATTERN_PASSWORD = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(\w){8,15}$/";
 
@@ -79,7 +80,7 @@ class ValidacionRegister
             $this->VALIDO = 1;
         } else if ($this->PASSWORD != $this->PASSWORD_CONFIRMATION) {
             $this->VALIDO = "nc";
-        }else {
+        } else {
             $this->VALIDO = 0;
         }
 
@@ -90,11 +91,14 @@ class ValidacionRegister
 if ($USERNAME != null && $NAME != null && $MAIL != null && $PASSWORD != null && $PASSWORD_CONFIRMATION != null) {
 
     $VALIDACION = new ValidacionRegister($USERNAME, $NAME, $MAIL, $PASSWORD, $PASSWORD_CONFIRMATION);
-    echo $VALIDACION->INICIO_VALIDACION();
+
+    if ($VALIDACION->INICIO_VALIDACION()) {
+        $GUARDAR_DATOS = new Form();
+        $GUARDAR_DATOS->Register($USERNAME, $NAME, $PASSWORD, $MAIL);
+    }
 
 } else {
 
     echo "No pueden haber campos vacios.";
-    
-}
 
+}
