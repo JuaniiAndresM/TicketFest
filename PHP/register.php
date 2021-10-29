@@ -97,8 +97,4 @@ if ($USERNAME != null && $NAME != null && $MAIL != null && $PASSWORD != null && 
         $GUARDAR_DATOS->Register($USERNAME, $NAME, $PASSWORD, $MAIL);
     }
 
-} else {
-
-    echo "No pueden haber campos vacios.";
-
-}
+} else { echo "No pueden haber campos vacios."; }
