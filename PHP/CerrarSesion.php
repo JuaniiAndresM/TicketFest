@@ -1,6 +1,6 @@
 <?php
 include '../PHP/procedimientosForm.php';
-$login= new Login();
+$login= new Form();
 
 $login->cerrarSesion();
 ?>

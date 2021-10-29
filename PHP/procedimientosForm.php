@@ -48,7 +48,7 @@ class Form{
         $sql = "CALL Register(?,?,?,?)";
         $stmts = $mysqli->prepare($sql);
 
-        $stmts->bind_param("ssss", $usuario, $nombre, $pass, $mail);
+        $stmts->bind_param("ssss", $nombre, $usuario, $pass, $mail);
         if ($stmts->execute()) {
             $valor = 1;
         } else {
