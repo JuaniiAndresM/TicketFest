@@ -1,7 +1,7 @@
 <?php
 include '../PHP/procedimientosForm.php';
 
-$login= new Login();
+$login= new Form();
 $log = array();
 
 if(isset($_POST['usuario'])){
