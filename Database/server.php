@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli('localhost','root','root','ticketfest');
+$mysqli = new mysqli('totumdev.uy','nqjctkft_ticketfest','Ticketfest2021!','nqjctkft_ticketfest');
 
 $mysqli->set_charset("utf8");
 

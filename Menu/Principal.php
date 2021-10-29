@@ -64,7 +64,7 @@ if(!isset($_SESSION['Usuario'])){
         <div class="content-body menu">
 
             <div class="menu-buttons">
-                <a class="button" href="/TicketFest/Form/Login.php"><i class="fas fa-plus"></i> Crear Ticket</a>
+                <a class="button" href="/TicketFest/Menu/CrearTicket.php"><i class="fas fa-plus"></i> Crear Ticket</a>
                 <a class="button" href="/TicketFest/Menu/TicketList.php"><i class="fas fa-history"></i> Historial de Tickets</a>
             </div>
         </div>

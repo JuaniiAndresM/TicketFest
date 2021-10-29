@@ -317,7 +317,7 @@ body {
   z-index: 3;
   top: 0;
   left: 0;
-  background: linear-gradient(145deg, #3c4b8b, #091547);
+  background: #0090ff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -973,6 +973,61 @@ body {
   bottom: 50px;
 }
 
+.content-tickets .steps {
+  width: calc(100% - 40px);
+  height: 30px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.content-tickets .steps .step1 {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0090ff;
+  z-index: 1;
+}
+
+.content-tickets .steps .step2, .content-tickets .steps .step3 {
+  right: calc(50% - 10px);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #004f8b;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: 1;
+}
+
+.content-tickets .steps .step3 {
+  right: 0;
+}
+
+.content-tickets .steps .line {
+  width: 100%;
+  height: 7px;
+  background-color: #004f8b;
+  border-radius: 20px;
+}
+
+.content-tickets .steps .complete {
+  position: absolute;
+  width: 0%;
+  height: 7px;
+  background-color: #0090ff;
+  border-radius: 20px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
 .content-tickets .ticket-wrapper {
   width: 100%;
   overflow: hidden;
@@ -1102,5 +1157,289 @@ body {
   margin: 0 auto;
   max-width: 200px;
   width: 100%;
+}
+
+.content-tickets .create-ticket {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.content-tickets .create-ticket .input-half {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.content-tickets .create-ticket .input {
+  width: 100%;
+  position: relative;
+}
+
+.content-tickets .create-ticket .input input {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  padding-left: 40px;
+  margin: 5px 0;
+  background: #ececec;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: #444;
+}
+
+.content-tickets .create-ticket .input input::-webkit-input-placeholder {
+  color: #444;
+}
+
+.content-tickets .create-ticket .input input:-ms-input-placeholder {
+  color: #444;
+}
+
+.content-tickets .create-ticket .input input::-ms-input-placeholder {
+  color: #444;
+}
+
+.content-tickets .create-ticket .input input::placeholder {
+  color: #444;
+}
+
+.content-tickets .create-ticket .input i {
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  color: #444;
+}
+
+.content-tickets .create-ticket button {
+  background: #0090ff;
+  width: 100%;
+  height: 50px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.content-tickets .create-ticket button i {
+  margin-right: 10px;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info h2 {
+  color: #0090ff;
+  font-weight: bold;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .desc {
+  color: #888;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .info {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante {
+  width: 100%;
+  margin: 5px auto;
+  height: 80px;
+  border-radius: 20px;
+  background: #0090ff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80px 1fr;
+      grid-template-columns: 80px 1fr;
+  overflow: hidden;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante .participante-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante .participante-img i {
+  font-size: 2.5em;
+  color: white;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante .participante-body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante .participante-body h2 {
+  font-size: 1em;
+  color: white;
+}
+
+.content-tickets .create-ticket .step3-create .ticket-info .participantes-list .participante .participante-body .info {
+  width: 100%;
+  text-align: left;
+  color: #ccc;
+}
+
+.content-tickets .create-ticket .integrantes-list {
+  width: 100%;
+  height: 150px;
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-tickets .create-ticket .integrantes-list .no-participantes {
+  display: none;
+}
+
+.content-tickets .create-ticket .integrantes-list .no-participantes p {
+  color: #0090ff;
+}
+
+.content-tickets .create-ticket .integrantes-list .cantidad-participantes {
+  margin-left: 20px;
+}
+
+.content-tickets .create-ticket .integrantes-list .cantidad-participantes p {
+  color: #0090ff;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante {
+  width: calc(100% - 20px);
+  margin: 5px auto;
+  height: 80px;
+  border-radius: 20px;
+  background: #0090ff;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80px 1fr 30px;
+      grid-template-columns: 80px 1fr 30px;
+  overflow: hidden;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .participante-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .participante-img i {
+  font-size: 2.5em;
+  color: white;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .participante-body {
+  width: 100%;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .participante-body h2 {
+  font-size: 1em;
+  color: white;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .participante-body .info {
+  width: 100%;
+  text-align: left;
+  color: #ccc;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-tickets .create-ticket .integrantes-list .participantes .participante .delete button {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  color: white;
+  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */
